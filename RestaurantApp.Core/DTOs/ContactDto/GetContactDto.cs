@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Core.DTOs.ContactDto
 {
-    public class GetContectDto
+    public class GetContactDto
     {
         public int ContactID { get; set; }
         public string Location { get; set; }
