@@ -25,7 +25,12 @@ namespace RestaurantApp.API.Controllers
             var value = _mapper.Map<List<ResultProductDto>>(_productService.TGetListAll());
             return Ok(value);
         }
-        [HttpPost]
+        [HttpGet("ProductListWithCategory")]
+        public IActionResult ProductListWithCategory()
+        {
+            return Ok(_productService.TGetProductsWithCategories());
+        }
+            [HttpPost]
         public IActionResult CreateProduct(CreateProductDto createProductDto)
         {
             _productService.TAdd(new Product()

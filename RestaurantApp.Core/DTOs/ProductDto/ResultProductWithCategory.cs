@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantApp.Core.DTOs.CategoryDto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Core.DTOs.ProductDto
 {
-    public class ResultProductWithCategory
-    {
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
-        public bool ProductStatus { get; set; }
-        public string CategoryName { get; set; }
+    public class ResultProductWithCategory : ResultProductDto
+    {   
+        public ResultCategoryDto Category { get; set; }
     }
 }
+    

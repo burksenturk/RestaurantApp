@@ -1,11 +1,7 @@
-﻿using RestaurantApp.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using RestaurantApp.Core.Entities;
 using RestaurantApp.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using RestaurantApp.Data;
 namespace RestaurantApp.Data.Repositories
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
@@ -13,5 +9,11 @@ namespace RestaurantApp.Data.Repositories
         public ProductRepository(AppDbContext context) : base(context)
         {
         }
-    }
+
+        public List<Product> GetProductsWithCategories()
+        {
+
+            return _context.Products.Include(p => p.Category).ToList();
+        }
+    } 
 }

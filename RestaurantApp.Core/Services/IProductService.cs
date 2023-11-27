@@ -1,4 +1,5 @@
-﻿using RestaurantApp.Core.Entities;
+﻿using RestaurantApp.Core.DTOs.ProductDto;
+using RestaurantApp.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace RestaurantApp.Core.Services
 {
     public interface IProductService : IGenericService<Product>
     {
+        List<ResultProductWithCategory> TGetProductsWithCategories();
     }
 }

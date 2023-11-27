@@ -9,7 +9,7 @@ namespace RestaurantApp.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly AppDbContext _context;
+        protected readonly AppDbContext _context;
 
         public GenericRepository(AppDbContext context)
         {
