@@ -13,5 +13,20 @@ namespace RestaurantApp.Data.Repositories
         public CategoryRepository(AppDbContext context) : base(context)
         {
         }
+
+        public int ActiveCategoryCount()
+        {
+            return _context.Products.Where(x=>x.ProductStatus == true).Count();
+        }
+        
+        public int CategoryCount()
+        {
+            return _context.Categories.Count();
+        }
+
+        public int PassiveCategoryCount()
+        {
+            return _context.Categories.Where(x => x.Status == false).Count();
+        }
     }
 }

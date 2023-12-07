@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Core.Services
 {
-    public interface ICategoryService : IGenericService<Category>
+    public interface IOrderDetailService : IGenericService<OrderDetail>
     {
-        int TCategoryCount();
-        int TActiveCategoryCount();
-        int TPassiveCategoryCount();
     }
 }

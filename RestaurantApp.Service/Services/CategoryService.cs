@@ -17,5 +17,20 @@ namespace RestaurantApp.Service.Services
         {
             _categoryRepository = categoryRepository;
         }
+
+        public int TActiveCategoryCount()
+        {
+            return _categoryRepository.ActiveCategoryCount();
+        }
+
+        public int TCategoryCount()
+        {
+            return _categoryRepository.CategoryCount();
+        }
+
+        public int TPassiveCategoryCount()
+        {
+            return _categoryRepository.PassiveCategoryCount();
+        }
     }
 }

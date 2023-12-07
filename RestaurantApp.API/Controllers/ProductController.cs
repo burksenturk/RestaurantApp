@@ -19,12 +19,73 @@ namespace RestaurantApp.API.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            return Ok(_productService.TProductCount());
+        }
+
+        [HttpGet("TotalPriceByDrinkCategory")]
+        public IActionResult TotalPriceByDrinkCategory()
+        {
+            return Ok(_productService.TTotalPriceByDrinkCategory());
+        }
+
+        [HttpGet("TotalPriceBySaladCategory")]
+        public IActionResult TotalPriceBySaladCategory()
+        {
+            return Ok(_productService.TTotalPriceBySaladCategory());
+        }
+
+        [HttpGet("ProductNameByMaxPrice")]
+        public IActionResult ProductNameByMaxPrice()
+        {
+            return Ok(_productService.TProductNameByMaxPrice());
+        }
+
+        [HttpGet("ProductNameByMinPrice")]
+        public IActionResult ProductNameByMinPrice()
+        {
+            return Ok(_productService.TProductNameByMinPrice());
+        }
+
+        [HttpGet("ProductAvgPriceByHamburger")]
+        public IActionResult ProductAvgPriceByHamburger()
+        {
+            return Ok(_productService.TProductAvgPriceByHamburger());
+        }
+
+        [HttpGet("ProductCountByHamburger")]
+        public IActionResult ProductCountByHamburger()
+        {
+            return Ok(_productService.TProductCountByCategoryNameHamburger());
+        }
+
+        [HttpGet("ProductCountByDrink")]
+        public IActionResult ProductCountByDrink()
+        {
+            return Ok(_productService.TProductCountByCategoryNameDrink());
+        }
+
+        [HttpGet("ProductPriceAvg")]
+        public IActionResult ProductPriceAvg()
+        {
+            return Ok(_productService.TProductPriceAvg());
+        }
+
+        [HttpGet("ProductPriceBySteakBurger")]
+        public IActionResult ProductPriceBySteakBurger()
+        {
+            return Ok(_productService.TProductPriceBySteakBurger());
+        }
+
         [HttpGet]
         public IActionResult ProductList()
         {
             var value = _mapper.Map<List<ResultProductDto>>(_productService.TGetListAll());
             return Ok(value);
         }
+
         [HttpGet("ProductListWithCategory")]
         public IActionResult ProductListWithCategory()
         {

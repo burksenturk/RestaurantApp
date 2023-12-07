@@ -18,6 +18,25 @@ namespace RestaurantApp.API.Controllers
             _categoryService = categoryService;
             _mapper = mapper;
         }
+
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            return Ok(_categoryService.TCategoryCount());
+        }
+
+        [HttpGet("ActiveCategoryCount")]
+        public IActionResult ActiveCategoryCount()
+        {
+            return Ok(_categoryService.TActiveCategoryCount());
+        }
+
+        [HttpGet("PassiveCategoryCount")]
+        public IActionResult PassiveCategoryCount()
+        {
+            return Ok(_categoryService.TPassiveCategoryCount());
+        }
+
         [HttpGet]
         public IActionResult CategoryList()
         {

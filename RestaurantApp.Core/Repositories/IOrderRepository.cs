@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace RestaurantApp.Core.Repositories
 {
-    public interface ICategoryRepository : IGenericRepository<Category>
+    public interface IOrderRepository : IGenericRepository<Order>
     {
-        int CategoryCount();
-        int ActiveCategoryCount();
-        int PassiveCategoryCount();
+        int TotalOrderCount();
+        int ActiveOrderCount();
+        decimal LastOrderPrice();
+        decimal TodayTotalPrice();
     }
 }

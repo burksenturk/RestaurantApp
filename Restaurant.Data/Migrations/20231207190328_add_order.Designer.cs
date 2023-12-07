@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestaurantApp.Data;
 
@@ -11,9 +12,10 @@ using RestaurantApp.Data;
 namespace RestaurantApp.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231207190328_add_order")]
+    partial class add_order
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,31 +47,6 @@ namespace RestaurantApp.Data.Migrations
                     b.HasKey("AboutID");
 
                     b.ToTable("Abouts");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Core.Entities.Basket", b =>
-                {
-                    b.Property<int>("BasketID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BasketID"), 1L, 1);
-
-                    b.Property<decimal>("Count")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("BasketID");
-
-                    b.ToTable("Baskets");
                 });
 
             modelBuilder.Entity("RestaurantApp.Core.Entities.Booking", b =>
@@ -239,112 +216,6 @@ namespace RestaurantApp.Data.Migrations
                     b.HasKey("FeatureID");
 
                     b.ToTable("Features");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Core.Entities.MenuTable", b =>
-                {
-                    b.Property<int>("MenuTableID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuTableID"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("MenuTableID");
-
-                    b.ToTable("MenuTables");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Core.Entities.Message", b =>
-                {
-                    b.Property<int>("MessageID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MessageID"), 1L, 1);
-
-                    b.Property<string>("Mail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MessageContent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("MessageSendDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NameSurname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MessageID");
-
-                    b.ToTable("Messages");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Core.Entities.MoneyCase", b =>
-                {
-                    b.Property<int>("MoneyCaseID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MoneyCaseID"), 1L, 1);
-
-                    b.Property<decimal>("TotalAmount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("MoneyCaseID");
-
-                    b.ToTable("MoneyCases");
-                });
-
-            modelBuilder.Entity("RestaurantApp.Core.Entities.Notification", b =>
-                {
-                    b.Property<int>("NotificationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationID"), 1L, 1);
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Icon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("NotificationID");
-
-                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("RestaurantApp.Core.Entities.Order", b =>

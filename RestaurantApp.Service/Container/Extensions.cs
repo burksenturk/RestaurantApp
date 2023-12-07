@@ -50,6 +50,12 @@ namespace RestaurantApp.Service.Container
             
             services.AddScoped<ISliderService, SliderService>();
             services.AddScoped<ISliderRepository, SliderRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddScoped<IOrderDetailService, OrderDetailService>();
+            services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
         }
     }
 }

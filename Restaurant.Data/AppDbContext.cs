@@ -26,6 +26,15 @@ namespace RestaurantApp.Data
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<MoneyCase> MoneyCases { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<MenuTable> MenuTables { get; set; }
 
     }
+
 }
+

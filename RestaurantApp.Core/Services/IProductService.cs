@@ -11,5 +11,15 @@ namespace RestaurantApp.Core.Services
     public interface IProductService : IGenericService<Product>
     {
         List<ResultProductWithCategory> TGetProductsWithCategories();
+        int TProductCount();
+        int TProductCountByCategoryNameHamburger();
+        int TProductCountByCategoryNameDrink();
+        decimal TProductPriceAvg();
+        string TProductNameByMaxPrice();
+        string TProductNameByMinPrice();
+        decimal TProductAvgPriceByHamburger();
+        decimal TProductPriceBySteakBurger();
+        decimal TTotalPriceByDrinkCategory();
+        decimal TTotalPriceBySaladCategory();
     }
 }
