@@ -2,7 +2,7 @@
 
 namespace RestaurantApp.Web.Controllers
 {
-    public class StatisticController : Controller
+    public class ProgressBarsController : Controller
     {
         public IActionResult Index()
         {

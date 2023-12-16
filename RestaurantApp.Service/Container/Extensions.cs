@@ -56,6 +56,12 @@ namespace RestaurantApp.Service.Container
 
             services.AddScoped<IOrderDetailService, OrderDetailService>();
             services.AddScoped<IOrderDetailRepository, OrderDetailRepository>();
+
+            services.AddScoped<IMoneyCaseService, MoneyCaseService>();
+            services.AddScoped<IMoneyCaseRepository, MoneyCaseRepository>();
+
+            services.AddScoped<IMenuTableService, MenuTableService>();
+            services.AddScoped<IMenuTableRepository, MenuTableRepository>();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace RestaurantApp.Data.Repositories
 
         public int ActiveCategoryCount()
         {
-            return _context.Products.Where(x=>x.ProductStatus == true).Count();
+            return _context.Categories.Where(x=>x.Status == true).Count();
         }
         
         public int CategoryCount()

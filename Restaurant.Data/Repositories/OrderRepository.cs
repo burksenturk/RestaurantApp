@@ -26,7 +26,7 @@ namespace RestaurantApp.Data.Repositories
 
         public decimal TodayTotalPrice()
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         public int TotalOrderCount()

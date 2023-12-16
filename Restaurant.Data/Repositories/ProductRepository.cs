@@ -53,17 +53,19 @@ namespace RestaurantApp.Data.Repositories
 
         public decimal ProductPriceBySteakBurger()
         {
-            throw new NotImplementedException();
+            return _context.Products.Where(x => x.ProductName == "Steak Burger").Select(y => y.Price).FirstOrDefault();
         }
 
         public decimal TotalPriceByDrinkCategory()
         {
-            throw new NotImplementedException();
+            int id = _context.Categories.Where(x => x.CategoryName == "İçecek").Select(y => y.CategoryID).FirstOrDefault();
+            return _context.Products.Where(x => x.CategoryID == id).Sum(y => y.Price);
         }
 
         public decimal TotalPriceBySaladCategory()
         {
-            throw new NotImplementedException();
+            int id = _context.Categories.Where(x => x.CategoryName == "Salata").Select(y => y.CategoryID).FirstOrDefault();
+            return _context.Products.Where(x => x.CategoryID == id).Sum(y => y.Price);
         }
     } 
 }

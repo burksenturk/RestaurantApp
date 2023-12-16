@@ -2,7 +2,7 @@
 
 namespace RestaurantApp.Web.Controllers
 {
-    public class StatisticController : Controller
+    public class SignalRDefaultController : Controller
     {
         public IActionResult Index()
         {

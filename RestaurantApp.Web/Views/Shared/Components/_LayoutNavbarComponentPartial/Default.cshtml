@@ -6,11 +6,11 @@
 
 <div class="main-header">
 
-	<script type="text/javascript">
+@*	<script type="text/javascript">
 
 		$(document).ready(() => {
 
-			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7186/SignalRHub").build();
+			var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7196/SignalRHub").build();
 			$("#connstatus").text(connection.state);
 			connection.start().then(() => {
 				$("#connstatus").text(connection.state);
@@ -42,7 +42,7 @@
 			});
 		});
 
-	</script>
+	</script>*@
 
 	<div class="logo-header">
 		<a href="index.html" class="logo">
