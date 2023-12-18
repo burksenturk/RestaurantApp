@@ -17,5 +17,20 @@ namespace RestaurantApp.Service.Services
         {
             _discountRepository = discountRepository;
         }
+
+        public void TChangeStatusToFalse(int id)
+        {
+             _discountRepository.ChangeStatusToFalse(id);
+        }
+
+        public void TChangeStatusToTrue(int id)
+        {
+            _discountRepository.ChangeStatusToTrue(id);
+        }
+
+        public List<Discount> TGetListByStatusTrue()
+        {
+            return _discountRepository.GetListByStatusTrue();
+        }
     }
 }
